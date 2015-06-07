@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Admin</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+
+    <script src="lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+    <!-- Demo page code -->
+
+    <style type="text/css">
+        #line-chart {
+            height:300px;
+            width:800px;
+            margin: 0px auto;
+            margin-top: 1em;
+        }
+        .brand { font-family: georgia, serif; }
+        .brand .first {
+            color: #ccc;
+            font-style: italic;
+        }
+        .brand .second {
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!--> 
+  <body class=""> 
+  <!--<![endif]-->
+    
+    <div class="navbar">
+        <div class="navbar-inner">
+                <ul class="nav pull-right">
+                    
+                    <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a></li>
+                    <li id="fat-menu" class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user"></i> ZJU_B2
+                            <i class="icon-caret-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="#">My Account</a></li>
+                            <li class="divider"></li>
+                            <li><a tabindex="-1" class="visible-phone" href="#">Settings</a></li>
+                            <li class="divider visible-phone"></li>
+                            <li><a tabindex="-1" href="sign-in.html">Logout</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <a class="brand" href="index.html"><span class="first">Course</span> <span class="second">Arrangements</span></a>
+        </div>
+    </div>
+    
+
+
+    
+    <div class="sidebar-nav">
+        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>Dashboard</a>
+        <ul id="dashboard-menu" class="nav nav-list collapse in">
+            <li><a href="index.html">Sort</a></li>
+            <li ><a href="import.html">Import The Data</a></li>
+            <li ><a href="edit_data.html">Edit The Data</a></li>
+            <li ><a href="adjust_course.html">Adjust</a></li>
+            <li ><a href="query_print.html">Query&Print</a></li>
+            
+        </ul>
+
+        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>Account<span class="label label-info">+3</span></a>
+        <ul id="accounts-menu" class="nav nav-list collapse">
+            <li ><a href="sign-in.html">Sign In</a></li>
+            <li ><a href="sign-up.html">Sign Up</a></li>
+            <li ><a href="reset-password.html">Reset Password</a></li>
+        </ul>
+
+        <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>Error Pages <i class="icon-chevron-up"></i></a>
+        <ul id="error-menu" class="nav nav-list collapse">
+            <li ><a href="403.html">403 page</a></li>
+            <li ><a href="404.html">404 page</a></li>
+            <li ><a href="500.html">500 page</a></li>
+            <li ><a href="503.html">503 page</a></li>
+        </ul>
+
+
+        <a href="faq.html" class="nav-header" ><i class="icon-question-sign"></i>Help</a>
+    </div>
+    
+
+    
+    <div class="content">
+        
+        <div class="header">
+            
+            <h1 class="page-title">Edit The Data</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+            <li class="active">Edit The Data</li>
+        </ul>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                    
+<div class="btn-toolbar">
+    <button class="btn btn-primary"><i class="icon-save"></i> Save</button>
+    <a href="#myModal" data-toggle="modal" class="btn">Delete</a>
+  <div class="btn-group">
+  </div>
+</div>
+<div class="well">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="home">
+    <form id="tab">
+        <label>Position</label>
+        <select name="Campus" id="Campus" class="input-xlarge">
+          <option value="0">Campus</option>
+          <option value="1">紫金港校区</option>
+          <option value="2">玉泉校区</option>
+          <option value="3">西溪校区</option>
+          <option value="4">华家池校区</option>
+          <option value="5">之江校区</option>
+          <option value="6">其他校区</option>
+        </select>
+        <select name="Position" id="Position" class="input-xlarge">
+          <option value="0" parentid="0">Classroom</option>
+          <option value="1" parentid="1">东1-A</option>
+          <option value="2" parentid="1">东1-B</option>
+          <option value="3" parentid="1">东2</option> 
+          <option value="4" parentid="1">东3</option>
+          <option value="5" parentid="1">东4</option>
+          <option value="6" parentid="2">教1</option>
+          <option value="7" parentid="2">教2</option>
+          <option value="8" parentid="2">教3</option>
+          <option value="9" parentid="2">教4</option>
+          <option value="10" parentid="2">教5</option>
+          <option value="11" parentid="2">教6</option>
+        </select>
+        <input type="text" value="504" class="input-xlarge">
+        <label>Capacity</label>
+        <input type="text" value="50" class="input-xlarge">
+        <label>Media?</label>
+        <select name="MediaOrNot" id="MediaOrNot" class="input-xlarge">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+        <label>Opening Time</label>
+        
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select name="From" id="From" class="input-xlarge">
+              <option value="0">8:00am</option>
+              <option value="1">9:00am</option>
+        </select>
+        <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <select name="From" id="From" class="input-xlarge">
+              <option value="0">8:00pm</option>
+              <option value="1">9:00pm</option>
+        </select>
+        
+        <label>Information</label>
+        <textarea value="Information" rows="3" class="input-xlarge">
+lalalalalal
+hahahhaha
+hohohohohoho
+        </textarea>
+    </form>
+      </div>
+  </div>
+
+</div>
+
+<div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Delete Confirmation</h3>
+  </div>
+  <div class="modal-body">
+    
+    <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete this record?</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+  </div>
+</div>
+
+
+                    
+                    <footer>
+                        <hr>
+                        
+                        <p>&copy; 2015 <a href="#" target="_blank">ZJU_B2</a></p>
+                    </footer>
+                    
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        $(function(){ 
+$("#Campus").unbind("change", eCampusChange).bind("change", eCampusChange); 
+$("#Position").unbind("change", ePositionChange).bind("change", ePositionChange); 
+}); 
+
+var eCampusChange = function(){ 
+var selectedValue = $(this).val(); 
+
+$("#Position").children("span").each(function(){ 
+$(this).children().clone().replaceAll($(this)); 
+}); 
+
+if(parseInt(selectedValue) != 0){  
+$("#Position").children("option[parentid!='" + selectedValue + "'][value!='0']").each(function(){ 
+$(this).wrap("<span style='display:none'></span>"); 
+}); 
+} 
+}; 
+
+var ePositionChange = function(){ 
+$("#Campus").val($(this).children("option:selected").attr("parentid")); 
+}; 
+        $("[rel=tooltip]").tooltip();
+        $(function() {
+            $('.demo-cancel-click').click(function(){return false;});
+        });
+    </script>
+    
+  </body>
+</html>
+
+
